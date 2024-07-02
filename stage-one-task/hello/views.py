@@ -41,8 +41,7 @@ def hello(request):
     if latitude and longitude:
         weather_url = (
             f"https://api.openweathermap.org/data/2.5/weather?"
-            f"lat={latitude}&lon={longitude}&appid={
-                settings.WEATHER_API_KEY}&units=metric"
+            f"lat={latitude}&lon={longitude}&appid={settings.WEATHER_API_KEY}&units=metric"
         )
         weather_response = requests.get(weather_url)
         if weather_response.status_code == 200:
