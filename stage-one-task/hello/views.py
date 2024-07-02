@@ -36,8 +36,7 @@ def hello(request):
         latitude = None
         longitude = None
 
-    logger.debug(f"Location Data: City: {city}, Latitude: {
-                 latitude}, Longitude: {longitude}")
+    logger.debug(f"Location Data: City: {city}, Latitude: {latitude}, Longitude: {longitude}")
 
     if latitude and longitude:
         weather_url = (
@@ -56,8 +55,7 @@ def hello(request):
 
     logger.debug(f"Temperature: {temperature}")
 
-    greeting = f"Hello, {visitor_name}!, the temperature is {
-        temperature} degrees Celsius in {city}"
+    greeting = f"Hello, {visitor_name}!, the temperature is {temperature} degrees Celsius in {city}"
     response = {
         "client_ip": client_ip,
         "location": city,
