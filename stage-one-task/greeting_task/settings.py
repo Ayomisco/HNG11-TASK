@@ -19,7 +19,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Access the weather API key
-WEATHER_API_KEY = os.getenv('WEATHER_API_KEY', 'dummy_api_key')
+WEATHER_API_KEY = 'ef2b95921b67288383c8e4d45b88a13b'
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
