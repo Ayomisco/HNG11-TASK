@@ -32,9 +32,20 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-**a9-@5#au+y9-rs5q!qszhr)dc2lgpgz_(oq7=@6z&4ia5n@6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
+
+
+# CORS Allowed Origins
+CORS_ALLOWED_ORIGINS = [
+    "https://aomidehngt.vercel.app",
+    "http://localhost:8000",
+]
+
+# Security settings
+CSRF_TRUSTED_ORIGINS = ["https://aomidehngt.vercel.app"]
+
 
 # Application definition
 
@@ -124,9 +135,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
+
+
+# Static files settings
+STATIC_URL = "/static/"
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
@@ -147,6 +162,30 @@ LOGGING = {
         '': {
             'handlers': ['console'],
             'level': 'DEBUG',
+        },
+    },
+}
+
+
+WEATHER_API_KEY="ef2b95921b67288383c8e4d45b88a13b"
+
+
+# Production Logging
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {
+        "file": {
+            "level": "ERROR",
+            "class": "logging.FileHandler",
+            "filename": os.path.join(BASE_DIR, "logs", "errors.log"),
+        },
+    },
+    "loggers": {
+        "django": {
+            "handlers": ["file"],
+            "level": "ERROR",
+            "propagate": True,
         },
     },
 }
