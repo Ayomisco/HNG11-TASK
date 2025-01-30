@@ -32,19 +32,19 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-**a9-@5#au+y9-rs5q!qszhr)dc2lgpgz_(oq7=@6z&4ia5n@6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
 
 # CORS Allowed Origins
 CORS_ALLOWED_ORIGINS = [
-    "https://aomidehngt.vercel.app",
+    "https://ayhngtask.vercel.app",
     "http://localhost:8000",
 ]
 
 # Security settings
-CSRF_TRUSTED_ORIGINS = ["https://aomidehngt.vercel.app"]
+CSRF_TRUSTED_ORIGINS = ["https://ayhngtask.vercel.app"]
 
 
 # Application definition
@@ -87,7 +87,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'greeting_task.wsgi.application'
+WSGI_APPLICATION = 'greeting_task.wsgi.app'
 
 
 # Database

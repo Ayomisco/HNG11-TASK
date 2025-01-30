@@ -1,18 +1,10 @@
+
 {
   "version": 1,
-  "builds": [
-    {
-      "src": "manage.py",
-      "use": "@vercel/python"
-    }
-  ],
   "routes": [
     {
       "src": "/(.*)",
       "dest": "manage.py"
     }
-  ],
-  "env": {
-    "DEBUG": "false"
-  }
+  ]
 }

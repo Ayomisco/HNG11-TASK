@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import hello
+from .views import get_basic_info
 
 urlpatterns = [
-    path('hello/', hello, name='hello'),
+    path('info/', get_basic_info, name='hello'),
 ]
