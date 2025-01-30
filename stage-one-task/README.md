@@ -47,7 +47,7 @@ GET /api/info/
 
 1. Clone the repository:
    ```
-   git clone https://github.com/yourusername/your-repo.git
+   git clone https://github.com/Ayomisco/HNG11-TASK.git
    cd your-repo
    ```
 2. Create a virtual environment and activate it:
