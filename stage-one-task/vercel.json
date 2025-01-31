@@ -1,10 +1,14 @@
-
 {
-  "version": 1,
+  "builds": [
+    {
+      "src": "greeting_task/wsgi.py",
+      "use": "@vercel/python"
+    }
+  ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "manage.py"
+      "dest": "greeting_task/wsgi.py"
     }
   ]
 }

@@ -149,43 +149,31 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'console': {
-            'level': 'DEBUG',
-            'class': 'logging.StreamHandler',
-        },
-    },
-    'loggers': {
-        '': {
-            'handlers': ['console'],
-            'level': 'DEBUG',
-        },
-    },
-}
 
 
 WEATHER_API_KEY="ef2b95921b67288383c8e4d45b88a13b"
 
 
 # Production Logging
+# 
 LOGGING = {
-    "version": 1,
-    "disable_existing_loggers": False,
-    "handlers": {
-        "file": {
-            "level": "ERROR",
-            "class": "logging.FileHandler",
-            "filename": os.path.join(BASE_DIR, "logs", "errors.log"),
-        },
+'version': 1,
+'disable_existing_loggers': False,
+'handlers': {
+    'console': {
+        'level': 'DEBUG',
+        'class': 'logging.StreamHandler',
     },
-    "loggers": {
-        "django": {
-            "handlers": ["file"],
-            "level": "ERROR",
-            "propagate": True,
-        },
+},
+'root': {
+    'handlers': ['console'],
+    'level': 'DEBUG',
+},
+'loggers': {
+    'django': {
+        'handlers': ['console'],
+        'level': 'DEBUG',
+        'propagate': True,
     },
+},
 }
